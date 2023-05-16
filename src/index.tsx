@@ -1,10 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './app/App';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import { Provider } from 'react-redux'
+import App from './app/App';
 import store from './store/store'
 import reportWebVitals from './reportWebVitals';
+import './index.css';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <div>404</div>
+  },
+  {
+    path: "/hero/:id",
+    element: <div>Hero page</div>,
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +28,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App/>
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
