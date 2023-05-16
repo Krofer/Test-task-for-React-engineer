@@ -1,5 +1,5 @@
-import { Hero as HeroType } from "../../../types";
-import { Hero } from "../Hero";
+import { Hero as HeroType } from "../../types";
+import { Card } from "./components/Card";
 
 interface HeroesProps {
   heroes: HeroType[]
@@ -7,7 +7,7 @@ interface HeroesProps {
 export const Heroes = ({ heroes }: HeroesProps) => (
   <div className='flex flex-wrap gap-3'>
     {
-      heroes.map((hero) => <Hero key={hero.name} hero={hero} />)
+      heroes.map((hero) => <Card key={hero.name} hero={hero} />)
     }
   </div>
 )

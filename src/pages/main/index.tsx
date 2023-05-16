@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
-import { getHeroes } from "../store/heroes";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import { Heroes, Loader, Pagination, SearchBar } from "./components";
+import { getHeroes } from "../../store/heroes";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { Heroes, Loader, Pagination, SearchBar } from "../../components";
 
-function App() {
+function MainPage() {
   const { heroes, loading } = useAppSelector((state) => state.heroes);
   const dispatch = useAppDispatch()
 
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainPage;

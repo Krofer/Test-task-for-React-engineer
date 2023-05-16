@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { getHeroes } from "../../../store/heroes";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { getHeroes } from "../../store/heroes";
 
 export const Pagination = () => {
   const { heroesPagination } = useAppSelector((state) => state.heroes);

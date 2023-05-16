@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch, useDebounce } from "../../../hooks";
-import { getHeroes } from "../../../store/heroes";
-import { API_URL } from "../../../constants";
+import { useAppDispatch, useDebounce } from "../../hooks";
+import { getHeroes } from "../../store/heroes";
+import { API_URL } from "../../constants";
 
 export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -14,7 +14,7 @@ export const SearchBar = () => {
 
   useEffect(() => {
     dispatch(getHeroes(`${API_URL}/people/?search=${debouncedSearchTerm}`))
-  }, [debouncedSearchTerm])
+  }, [debouncedSearchTerm, dispatch])
 
   return <div className='mb-5 text-right'>
     <input
