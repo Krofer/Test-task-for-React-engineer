@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { getHeroes } from "../store/heroes";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { Heroes, Pagination } from "./components";
+import { Heroes, Loader, Pagination } from "./components";
 
 function App() {
   const { heroes, loading } = useAppSelector((state) => state.heroes);
@@ -15,9 +15,11 @@ function App() {
   return (
     <div className="container mx-auto">
       <h1 className='text-3xl text-center mb-10'>List of Heroes</h1>
-      {loading}
-      <Heroes heroes={heroes} />
-      <Pagination />
+      <div className='relative'>
+        {loading === 'pending' && <Loader />}
+        <Heroes heroes={heroes}/>
+      </div>
+      <Pagination/>
     </div>
   );
 }
