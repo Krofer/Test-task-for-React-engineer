@@ -4,4 +4,5 @@ import { HeroesPagination } from "./heroesPagination";
 export type State = {
   heroes: Hero[]
   heroesPagination: HeroesPagination | null
+  loading: 'idle' | 'pending' | 'succeeded' | 'failed'
 }
