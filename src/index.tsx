@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Provider } from 'react-redux'
-import Index from './pages/main';
+import { MainPage, HeroPage, PageNotFound } from './pages';
 import { store } from './store/store'
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -13,13 +13,12 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
-    // TODO: в идеале сделать норм компонент
-    errorElement: <div>404</div>
+    element: <MainPage />,
+    errorElement: <PageNotFound />
   },
   {
     path: "/hero/:name",
-    element: <div>Hero page</div>,
+    element: <HeroPage />,
   },
 ]);
 

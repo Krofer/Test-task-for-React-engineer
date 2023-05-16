@@ -17,6 +17,9 @@ export const SearchBar = () => {
   }, [debouncedSearchTerm, dispatch])
 
   return <div className='mb-5 text-right'>
+    {
+      //TODO: в отдельный компонент
+    }
     <input
       type='text'
       value={searchTerm}

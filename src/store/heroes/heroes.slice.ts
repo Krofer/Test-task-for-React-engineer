@@ -21,7 +21,7 @@ export const heroesSlice = createSlice({
     })
     builder.addCase(getHeroes.rejected, (state) => {
       // TODO: стоит докинуть обработку ошибки
-      state.loading = 'idle'
+      state.loading = 'failed'
     })
     builder.addCase(getHeroes.fulfilled, (state, action: PayloadAction<HeroesResponse>) => {
       const { results, previous, count, next } = action.payload
@@ -32,14 +32,13 @@ export const heroesSlice = createSlice({
         previous,
         count
       }
-      state.loading = 'idle'
+      state.loading = 'succeeded'
     })
   },
 });
 
 export const {
   actions: {
-    addHeroes: addHeroesActionCreator,
-    addHeroesPagination: addHeroesPaginationActionCreator
+    changeHero: changeHeroActionCreator,
   },
 } = heroesSlice;

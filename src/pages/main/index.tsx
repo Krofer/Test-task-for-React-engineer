@@ -4,7 +4,7 @@ import { getHeroes } from "../../store/heroes";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { Heroes, Loader, Pagination, SearchBar } from "../../components";
 
-function MainPage() {
+export const MainPage = () => {
   const { heroes, loading } = useAppSelector((state) => state.heroes);
   const dispatch = useAppDispatch()
 
@@ -15,14 +15,12 @@ function MainPage() {
   return (
     <div className="container mx-auto">
       <h1 className='text-3xl text-center mb-10'>List of Heroes</h1>
-      <SearchBar />
+      <SearchBar/>
       <div className='relative'>
-        {loading === 'pending' && <Loader />}
+        {loading === 'pending' && <Loader/>}
         <Heroes heroes={heroes}/>
       </div>
       <Pagination/>
     </div>
   );
 }
-
-export default MainPage;
