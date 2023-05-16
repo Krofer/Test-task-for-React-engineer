@@ -19,6 +19,10 @@ export const heroesSlice = createSlice({
     builder.addCase(getHeroes.pending, (state) => {
       state.loading = 'pending'
     })
+    builder.addCase(getHeroes.rejected, (state) => {
+      // TODO: стоит докинуть обработку ошибки
+      state.loading = 'idle'
+    })
     builder.addCase(getHeroes.fulfilled, (state, action: PayloadAction<HeroesResponse>) => {
       const { results, previous, count, next } = action.payload
 
