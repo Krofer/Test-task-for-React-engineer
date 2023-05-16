@@ -20,7 +20,6 @@ export const heroesSlice = createSlice({
       state.loading = 'pending'
     })
     builder.addCase(getHeroes.rejected, (state) => {
-      // TODO: стоит докинуть обработку ошибки
       state.loading = 'failed'
     })
     builder.addCase(getHeroes.fulfilled, (state, action: PayloadAction<HeroesResponse>) => {

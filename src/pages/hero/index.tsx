@@ -39,9 +39,6 @@ export const HeroPage = () => {
               !editMode && (
                 <div className='flex flex-col items-center gap-2'>
                   <Hero hero={hero}/>
-                  {
-                    // TODO: вынести в компонент
-                  }
                   <button
                     className='px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm'
                     onClick={() => setEditMode(true)}
