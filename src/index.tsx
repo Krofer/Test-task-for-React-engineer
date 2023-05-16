@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux'
 import App from './app/App';
-import store from './store/store'
+import { store } from './store/store'
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 

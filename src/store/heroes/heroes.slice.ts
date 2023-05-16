@@ -7,4 +7,9 @@ export const heroesSlice = createSlice({
   reducers: heroesReducer,
 });
 
-
+export const {
+  actions: {
+    addHeroes: addHeroesActionCreator,
+    addHeroesPagination: addHeroesPaginationActionCreator
+  },
+} = heroesSlice;
