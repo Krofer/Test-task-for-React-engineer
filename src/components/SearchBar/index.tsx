@@ -13,7 +13,7 @@ export const SearchBar = () => {
   })
 
   useEffect(() => {
-    dispatch(getHeroes(`${API_URL}/people/?search=${debouncedSearchTerm}`))
+    dispatch(getHeroes(`${API_URL}/people/${debouncedSearchTerm ? `?search=${debouncedSearchTerm}` : ''}`))
   }, [debouncedSearchTerm, dispatch])
 
   return <div className='mb-5 text-right'>

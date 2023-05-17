@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { getHeroes } from "../../store/heroes";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppSelector } from "../../hooks";
 import { Heroes, Loader, Pagination, SearchBar } from "../../components";
 
 export const MainPage = () => {
   const { heroes, loading } = useAppSelector((state) => state.heroes);
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(getHeroes())
-  }, [dispatch])
 
   return (
     <div className="container mx-auto">
